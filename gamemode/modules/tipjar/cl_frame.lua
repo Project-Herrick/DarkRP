@@ -289,5 +289,10 @@ end)
 function DarkRP.tipJarUI(tipjar)
     if PIXEL.TipjarFrame then PIXEL.TipjarFrame:Remove() end
     PIXEL.TipjarFrame = vgui.Create("PIXEL.Tipjar")
-    PIXEL.TipjarFrame:SetTipjar(tipjar)
+
+    if true then return end
+    updateModel("tipjar", tipjar)
+    updateModel("isOwner", tipjar:Getowning_ent() == LocalPlayer())
+    updateModel("amount", 0)
+    updateModel("frameVisible", true)
 end
